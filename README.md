@@ -43,5 +43,5 @@ make doc
 
 ## Limitation
 
-* Only user and role are supported. See [Beeswax documentation](https://api-docs.freewheel.tv/beeswax/v2.0/reference) for all resources available
-* data resource can only use ID
+* Only user and role are supported. See [Beeswax documentation](https://api-docs.freewheel.tv/beeswax/v2.0/reference) for all resources available.
+* data resource can only use ID.
