@@ -41,6 +41,16 @@ Your `terraform apply` will now use the locally build plugin.
 make doc
 ```
 
+## Deploying a new version to Terraform Registry
+
+When code is merge in `main` simply tag the version and push. Github action will automatically release the provider to Terraform Registry.
+
+Example:
+````
+git tag v0.1.1
+git push origin v0.1.1
+```
+
 ## Limitation
 
 * Only user and role are supported. See [Beeswax documentation](https://api-docs.freewheel.tv/beeswax/v2.0/reference) for all resources available.
