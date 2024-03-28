@@ -9,7 +9,7 @@ terraform {
   required_providers {
     beeswax = {
       source = "martin-magakian/beeswax"
-      version = "1.0.3"     # check latest version (https://registry.terraform.io/providers/martin-magakian/beeswax/latest)
+      version = "1.0.4"     # check latest version (https://registry.terraform.io/providers/martin-magakian/beeswax/latest)
     }
   }
 }
@@ -79,8 +79,8 @@ When code is merge in `main` simply tag the version and push. Github action will
 
 Example:
 ````
-git tag v1.0.3
-git push origin v1.0.3
+git tag v1.0.4
+git push origin v1.0.4
 ```
 
 ## Limitation
