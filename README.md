@@ -5,6 +5,15 @@ This Terraform module was done using [Terraform Plugin Framework](https://github
 ## Usage
 
 ```
+terraform {
+  required_providers {
+    beeswax = {
+      source = "martin-magakian/beeswax"
+      version = 1.0.2     # check latest version (https://registry.terraform.io/providers/martin-magakian/beeswax/latest)
+    }
+  }
+}
+
 provider "beeswax" {
   host     = "https://myorg.api.beeswax.com"
   email    = "myemail@myorg.com"
