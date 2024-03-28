@@ -2,6 +2,29 @@
 
 This Terraform module was done using [Terraform Plugin Framework](https://github.com/hashicorp/terraform-plugin-framework) starting from a fork of the Terraform example [terraform-provider-scaffolding](https://github.com/hashicorp/terraform-provider-scaffolding).
 
+## Usage
+
+```
+provider "beeswax" {
+  host     = "https://myorg.api.beeswax.com"
+  email    = "myemail@myorg.com"
+  password = "myPasswd"
+}
+
+resource "beeswax_user" "example" {
+  super_user         = false
+  email              = "myemail@myorg.com"
+  first_name         = "Martin"
+  last_name          = "Magakian"
+  role_id            = 1
+  account_id         = 1
+  active             = true
+  all_account_access = true
+  account_group_ids  = []
+}
+```
+
+
 ## Developement
 
 During development it's faster to using a locally build provider.
