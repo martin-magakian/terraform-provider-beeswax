@@ -23,10 +23,10 @@ func defaultConfiguration(providerData any, diagnostics diag.Diagnostics) *beesw
 	return client
 }
 
-func convertListInt(list []types.Int64) []int {
-	result := []int{}
+func convertListInt(list []types.Int64) []int64 {
+	result := []int64{}
 	for _, item := range list {
-		result = append(result, int(item.ValueInt64()))
+		result = append(result, item.ValueInt64())
 	}
 	return result
 }

@@ -102,7 +102,7 @@ func (r *roleResource) Create(ctx context.Context, req resource.CreateRequest, r
 	}
 
 	// Map response body to schema and populate Computed attribute values
-	plan.ID = types.Int64Value(int64(roleId))
+	plan.ID = types.Int64Value(roleId)
 
 	// Set state to fully populated data
 	diags = resp.State.Set(ctx, plan)
@@ -220,9 +220,9 @@ func convertToRole(plan roleResourceModel) beeswax.Role {
 }
 
 func fillStateFromRole(state *roleResourceModel, role beeswax.Role) {
-	state.ID = types.Int64Value(int64(role.ID))
+	state.ID = types.Int64Value(role.ID)
 	state.Name = types.StringValue(role.Name)
-	state.ParentRoleID = types.Int64Value(int64(role.ParentRoleID))
+	state.ParentRoleID = types.Int64Value(role.ParentRoleID)
 	state.Archived = types.BoolValue(role.Archived)
 	state.Notes = types.StringValue(role.Notes)
 	state.SharedAcrossAccounts = types.BoolValue(role.SharedAcrossAccounts)

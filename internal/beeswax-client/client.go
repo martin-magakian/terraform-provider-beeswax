@@ -11,16 +11,16 @@ import (
 )
 
 type User struct {
-	ID               int64  `json:"id"`
-	SuperUser        bool   `json:"super_user"`
-	Email            string `json:"email"`
-	FirstName        string `json:"first_name"`
-	LastName         string `json:"last_name"`
-	RoleID           int64  `json:"role_id"`
-	AccountID        int64  `json:"account_id"`
-	Active           bool   `json:"active"`
-	AllAccountAccess bool   `json:"all_account_access"`
-	AccountGroupIDs  []int  `json:"account_group_ids"`
+	ID               int64   `json:"id"`
+	SuperUser        bool    `json:"super_user"`
+	Email            string  `json:"email"`
+	FirstName        string  `json:"first_name"`
+	LastName         string  `json:"last_name"`
+	RoleID           int64   `json:"role_id"`
+	AccountID        int64   `json:"account_id"`
+	Active           bool    `json:"active"`
+	AllAccountAccess bool    `json:"all_account_access"`
+	AccountGroupIDs  []int64 `json:"account_group_ids"`
 }
 
 type Role struct {
@@ -31,7 +31,7 @@ type Role struct {
 	Notes                string       `json:"notes"`
 	SharedAcrossAccounts bool         `json:"shared_across_accounts"`
 	Permissions          []Permission `json:"permissions"`
-	ReportIDs            []int        `json:"report_ids"`
+	ReportIDs            []int64      `json:"report_ids"`
 }
 
 type Permission struct {
@@ -82,7 +82,7 @@ func (bx *Client) request(method, path string, data interface{}) ([]byte, error)
 		return nil, fmt.Errorf("can't unmarshall: %w", err)
 	}
 
-	req, err := http.NewRequest(method, bx.APIURL+path, bytes.NewBuffer([]byte(dataPayload)))
+	req, err := http.NewRequest(method, bx.APIURL+path, bytes.NewBuffer(dataPayload))
 	if err != nil {
 		return nil, fmt.Errorf("request creation failed: %w", err)
 	}

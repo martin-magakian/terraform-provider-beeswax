@@ -204,18 +204,18 @@ func convertToUser(plan userResourceModel) beeswax.User {
 }
 
 func fillStateFromUser(state *userResourceModel, user beeswax.User) {
-	state.ID = types.Int64Value(int64(user.ID))
+	state.ID = types.Int64Value(user.ID)
 	state.SuperUser = types.BoolValue(user.SuperUser)
 	state.Email = types.StringValue(user.Email)
 	state.FirstName = types.StringValue(user.FirstName)
 	state.LastName = types.StringValue(user.LastName)
-	state.RoleID = types.Int64Value(int64(user.RoleID))
-	state.AccountID = types.Int64Value(int64(user.AccountID))
+	state.RoleID = types.Int64Value(user.RoleID)
+	state.AccountID = types.Int64Value(user.AccountID)
 	state.Active = types.BoolValue(user.Active)
 	state.AllAccountAccess = types.BoolValue(user.AllAccountAccess)
 	g := []types.Int64{}
 	for _, id := range user.AccountGroupIDs {
-		g = append(g, types.Int64Value(int64(id)))
+		g = append(g, types.Int64Value(id))
 	}
 	state.AccountGroupIDs = g
 }
