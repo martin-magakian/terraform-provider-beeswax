@@ -7,6 +7,7 @@ import (
 	"github.com/hashicorp/terraform-plugin-framework/datasource"
 	"github.com/hashicorp/terraform-plugin-framework/datasource/schema"
 	"github.com/hashicorp/terraform-plugin-framework/types"
+	"github.com/martin-magakian/terraform-provider-beeswax/internal/beeswax-client"
 )
 
 // Ensure the implementation satisfies the expected interfaces.
@@ -16,8 +17,7 @@ var (
 )
 
 type roleDataSource struct {
-	// share implementation with the resource
-	roleResource
+	client *beeswax.Client
 }
 
 func NewRoleDataSource() datasource.DataSource {

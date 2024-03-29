@@ -159,6 +159,7 @@ func (p *beeswaxProvider) DataSources(_ context.Context) []func() datasource.Dat
 	return []func() datasource.DataSource{
 		NewUserDataSource,
 		NewRoleDataSource,
+		NewRolesDataSource,
 	}
 }
 

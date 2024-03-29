@@ -146,6 +146,18 @@ func (bx *Client) GetRole(roleID int64) (Role, error) {
 	return role, err
 }
 
+func (bx *Client) GetRoles() ([]Role, error) {
+	response, err := bx.request("GET", "/rest/v2/roles", "")
+	if err != nil {
+		return nil, err
+	}
+	roles := struct {
+		Results []Role `json:"results"`
+	}{}
+	err = json.Unmarshal(response, &roles)
+	return roles.Results, err
+}
+
 func (bx *Client) CreateRole(role Role) (int64, error) {
 	response, err := bx.request("POST", "/rest/v2/roles", role)
 	if err != nil {

@@ -9,7 +9,7 @@ terraform {
   required_providers {
     beeswax = {
       source = "martin-magakian/beeswax"
-      version = "1.0.4"     # check latest version (https://registry.terraform.io/providers/martin-magakian/beeswax/latest)
+      version = "1.0.5"     # check latest version (https://registry.terraform.io/providers/martin-magakian/beeswax/latest)
     }
   }
 }
@@ -78,9 +78,9 @@ make doc
 When code is merge in `main` simply tag the version and push. Github action will automatically release the provider to Terraform Registry.
 
 Example:
-````
-git tag v1.0.4
-git push origin v1.0.4
+```
+git tag v1.0.5
+git push origin v1.0.5
 ```
 
 ## Limitation
